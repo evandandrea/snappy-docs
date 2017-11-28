@@ -73,17 +73,35 @@ title: Build snaps
             </header>
             <p class="u-no-margin">Python</p>
           </a>
+          <a class="p-logo-link p-card" href="/build-snaps/java">
+            <header class="p-card__header">
+              <img src="https://assets.ubuntu.com/v1/9c609032-150px-Java_logo.png" style="height: 105px; max-height: 105px;" alt="">
+            </header>
+            <p class="u-no-margin">Java</p>
+          </a>
           <a class="p-logo-link p-card" href="/build-snaps/ruby">
             <header class="p-card__header">
               <img src="https://assets.ubuntu.com/v1/e6bb225e-ruby-logo.png" style="height: 105px; max-height: 105px;" alt="">
             </header>
             <p class="u-no-margin">Ruby</p>
           </a>
+          <a class="p-logo-link p-card" href="/build-snaps/c">
+            <header class="p-card__header">
+              <img src="https://assets.ubuntu.com/v1/485f8203-cpp_logo.png" style="height: 105px; max-height: 105px;" alt="">
+            </header>
+            <p class="u-no-margin">C/C++</p>
+          </a>
           <a class="p-logo-link p-card" href="/build-snaps/go">
             <header class="p-card__header">
               <img src="https://assets.ubuntu.com/v1/c85a212e-go-logo.png" style="height: 105px; max-height: 105px;" alt="">
             </header>
             <p class="u-no-margin">Go</p>
+          </a>
+          <a class="p-logo-link p-card" href="/build-snaps/rust">
+            <header class="p-card__header">
+              <img src="https://assets.ubuntu.com/v1/a1303290-rust.png" style="height: 105px; max-height: 105px;" alt="">
+            </header>
+            <p class="u-no-margin">Rust</p>
           </a>
           <a class="p-logo-link p-card" href="/build-snaps/moos">
             <header class="p-card__header">

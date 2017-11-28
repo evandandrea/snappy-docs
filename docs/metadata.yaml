@@ -87,11 +87,20 @@ navigation:
   - location: build-snaps/python.md
     title: Python
 
+  - location: build-snaps/java.md
+    title: Java
+
   - location: build-snaps/ruby.md
     title: Ruby
 
+  - location: build-snaps/c.md
+    title: C/C++
+
   - location: build-snaps/go.md
     title: Go
+
+  - location: build-snaps/rust.md
+    title: Rust
 
   - location: build-snaps/moos.md
     title: MOOS
@@ -101,6 +110,9 @@ navigation:
 
   - location: build-snaps/parts.md
     title: Parts
+
+  - location: build-snaps/register-snap.md
+    title: Registering your snap
 
   - location: build-snaps/plugins.md
     title: Plugins

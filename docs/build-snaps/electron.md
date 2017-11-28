@@ -90,8 +90,8 @@ To build Electron applications you also need Node installed, which can be downlo
 
 If you have just installed snap support, start a new shell so your `PATH` is updated to include `/snap/bin`. You can then build this example yourself:
 ```
-git clone https://github.com/snapcraft-docs/electron-quickstart
-cd electron-quickstart
+git clone https://github.com/snapcraft-docs/electron-quick-start
+cd electron-quick-start
 npm install
 npm run dist
 ```
@@ -112,7 +112,7 @@ sudo snap remove electron-quick-start
 
 ## Share with your friends
 
-To share your snaps you need to publish them in the Snap Store. First, create an account on [dashboard.snapcraft.io](https://dashboard.snapcraft.io). Here you can customize how your snaps are presented, review your uploads and control publishing.
+To share your snaps you need to publish them in the Snap Store. First, create an account on [dashboard.snapcraft.io](https://dashboard.snapcraft.io/openid/login/?next=/dev/snaps/). Here you can customize how your snaps are presented, review your uploads and control publishing.
 
 You’ll need to choose a unique “developer namespace” as part of the account creation process. This name will be visible by users and associated with your published snaps.
 
