@@ -1,18 +1,23 @@
 FROM ubuntu:xenial
 
-RUN apt-get update && apt-get install --yes nginx
+# System dependencies
+RUN apt-get update && apt-get install --yes python3-pip
+
+# Python dependencies
+ENV LANG C.UTF-8
+RUN pip3 install --upgrade pip
+RUN pip3 install gunicorn
 
 # Set git commit ID
 ARG COMMIT_ID
+ENV COMMIT_ID=${COMMIT_ID}
 RUN test -n "${COMMIT_ID}"
 
-# Copy over files
+# Import code, install code dependencies
 WORKDIR /srv
-ADD _site .
-ADD nginx.conf /etc/nginx/sites-enabled/default
-RUN sed -i "s/~COMMIT_ID~/${COMMIT_ID}/" /etc/nginx/sites-enabled/default
+ADD . .
+RUN pip3 install -r requirements.txt
 
-STOPSIGNAL SIGTERM
-
-CMD ["nginx", "-g", "daemon off;"]
-
+# Setup commands to run server
+ENTRYPOINT ["gunicorn", "app:app", "--access-logfile", "-", "--error-logfile", "-", "--bind"]
+CMD ["0.0.0.0:80"]
