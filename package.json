@@ -1,7 +1,7 @@
 {
   "scripts": {
     "clean": "rm -rf node_modules yarn-error.log css css *.log *.sqlite _site/ build/ .jekyll-metadata .bundle",
-    "build": "documentation-builder --base-directory docs --output-path templates",
+    "build": "documentation-builder --base-directory docs --template-path docs/en/template.html --output-path templates",
     "test": "",
     "serve": "cd dist && FLASK_DEBUG=true FLASK_APP=app.py flask run -h 0.0.0.0 -p $PORT"
   }

@@ -52,3 +52,5 @@ env[23]/
 *.css
 
 # Project-specific ignores
+
+templates
