@@ -9,7 +9,6 @@ import flask
 import routing
 
 
-application_root = '/core'
 app = flask.Flask(__name__)
 
 permanent_redirects_path = app.config.get(
@@ -70,15 +69,8 @@ def find_file_or_redirect():
     of the other paths, and redirect there if necessary
     """
 
-    # Check the request is within this application
-    if not flask.request.path.startswith(application_root):
-        return
-
-    # Get a contextual request_path by stripping application_root
-    local_request_path = flask.request.path[len(application_root):]
-
     template_finder = routing.TemplateFinder(app.template_folder)
-    file_path = routing.get_file(local_request_path)
+    file_path = routing.get_file(flask.request.path)
     preferred_languages = routing.requested_languages(flask.request)
     if 'en' not in preferred_languages:
         preferred_languages.append('en')
@@ -91,19 +83,10 @@ def find_file_or_redirect():
         return flask.render_template(file_path)
     else:
         new_path = template_finder.find_alternate_path(
-            local_request_path,
+            flask.request.path,
             languages,
             versions
         )
 
         if new_path:
-            return flask.redirect(application_root + new_path)
-
-
-@app.route('/')
-def redirect_to_core():
-    """
-    Redirect homepage to application_root (/core)
-    """
-
-    return flask.redirect(application_root + '/')
+            return flask.redirect(new_path)
